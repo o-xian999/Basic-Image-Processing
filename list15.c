@@ -13,11 +13,11 @@ int main(int argc, char* argv[]) {
   char key;
 
   Mat mi = (Mat_<double>(2, 3) <<
-    1.5, 0.0, 0,
+    1.5, 0.0, 0,                        //拡大・縮小
     0.0, 1.5, 0;
-    //cos(M_PI / 6), -sin(M_PI / 6), 0,
+    //cos(M_PI / 6), -sin(M_PI / 6), 0, //回転
     //sin(M_PI / 6), cos(M_PI / 6), 0;
-    //1.0, tan(M_PI / 6), 0,
+    //1.0, tan(M_PI / 6), 0,            //スキュー
     //0.0, 1.0.           0
   );
 
