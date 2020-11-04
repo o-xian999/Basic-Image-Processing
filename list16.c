@@ -10,7 +10,7 @@ Mat img_src, img_dst;
 int main(int argc, char* argv[]) {
   char key;
 
-  Mat mi = (Mat_<double>(2, 3) <<
+  Mat m1 = (Mat_<double>(2, 3) <<
     1.0, 0.0, 50,                        //平行移動
     0.0, 1.0, 50;
     //cos(M_PI / 4), -sin(M_PI / 4), 128, //回転 + 平行移動
