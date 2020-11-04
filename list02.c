@@ -22,11 +22,12 @@ int main(){
   while(1){
     // カメラ画像を読み込み(カメラ読み込み演算子)。
     cap >> img_src;
-    imshow("camera", img_src);
+    flip(img_src, img_dst, 1);
+    imshow("camera", img_dst);
 
     key = waitKey(10);
     if (key == 'q') break;
-    else if (key == 's') imwrite("output.jpg", img_src);
+    else if (key == 's') imwrite("output.jpg", img_dst);
   }
 
   destroyAllWindows();
