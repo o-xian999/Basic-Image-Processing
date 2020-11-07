@@ -1,6 +1,7 @@
 #include <stdio.h>
-#include <opencv2/oppencv.hpp>
+#include <opencv2/opencv.hpp>
 #include <opencv2/core/core.hpp>
+#include <opencv2/highgui/highgui_c.h>
 #include <opencv2/highgui/highgui.hpp> 
 
 using namespace cv;
@@ -23,7 +24,7 @@ int main(int argc, char* argv[]) {
         v_dst = 0;
       } else if (v_src < 128) {
         v_dst = 85;
-      } else if (v_srd < 192) {
+      } else if (v_src < 192) {
         v_dst = 170;
       } else {
         v_dst  =255;
@@ -32,8 +33,8 @@ int main(int argc, char* argv[]) {
     }
   }
 
-  nameWindow(argv[1], CV_WINDOW_AUTOSIZE);
-  nameWindow("output", CV_WINDOW_AUTOSIZE);
+  namedWindow(argv[1], CV_WINDOW_AUTOSIZE);
+  namedWindow("output", CV_WINDOW_AUTOSIZE);
 
   while (1) {
     imshow(argv[1], img_src);
