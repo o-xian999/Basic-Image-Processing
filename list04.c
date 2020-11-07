@@ -1,6 +1,7 @@
 #include <stdio.h>
-#include <opencv2/oppencv.hpp>
+#include <opencv2/opencv.hpp>
 #include <opencv2/core/core.hpp>
+#include <opencv2/highgui/highgui_c.h>
 #include <opencv2/highgui/highgui.hpp> 
 
 using namespace cv;
@@ -25,14 +26,14 @@ int main (int argc, char* argv[]) {
   }
 
   for(int i = 0; i < 256; i++) {
-    line(img_his, Point(i, 99), Point(i, 99-histgram[i]/30)
+    line(img_his, Point(i, 99), Point(i, 99-histgram[i]/30),
       CV_RGB(255, 255, 255));
   }
-  nameWindow(argv[l], img_src);
-  nameWindow("histgram", CV_WINDOW_AUTOSIZE);
+  namedWindow(argv[1], CV_WINDOW_AUTOSIZE);
+  namedWindow("histgram", CV_WINDOW_AUTOSIZE);
 
-  while (l) {
-    imshow(argv[l], img_src);
+  while (1) {
+    imshow(argv[1], img_src);
     imshow("histgram", img_his);
 
     key = waitKey(10);
