@@ -1,4 +1,4 @@
-OBJECTS = list01 list02 list03 list04 list05 list06 list17 task02
+OBJECTS = list01 list02 list03 list04 list05 list06 list07 list17 task02
 
 all: ${OBJECTS}
 
@@ -21,6 +21,9 @@ list05: list05.c
 	${CXX} $^ -o $@ `pkg-config --cflags --libs opencv4`
 
 list06: list06.c
+	${CXX} $^ -o $@ `pkg-config --cflags --libs opencv4`
+
+list07: list07.c
 	${CXX} $^ -o $@ `pkg-config --cflags --libs opencv4`
 
 list17: list17.c
