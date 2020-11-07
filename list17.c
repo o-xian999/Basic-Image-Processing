@@ -1,7 +1,8 @@
 #include <stdio.h>
-#include <opencv2/oppencv.hpp>
+#include <opencv2/opencv.hpp>
 #include <opencv2/core/core.hpp>
-#include <opencv2/highgui/highgui.hpp> 
+#include <opencv2/highgui/highgui_c.h>
+#include <opencv2/highgui/highgui.hpp>
 
 using namespace cv;
 
@@ -12,7 +13,7 @@ int main(int argc, char* argv[]) {
 
   Mat m1 = (Mat_<double>(3, 3) <<
    -1.0, 0.0, 0,
-    0.0, 1.0, 0;
+    0.0, 1.0, 0,
     0,   0,   1
   );
   Mat m2 = (Mat_<double>(3, 3) <<
@@ -30,11 +31,11 @@ int main(int argc, char* argv[]) {
   namedWindow("output", CV_WINDOW_AUTOSIZE);
 
   while (1) {
-    imshow(argv[1], img_bin);
+    imshow(argv[1], img_src);
     imshow("output", img_dst);
 
     key = waitKey(10);
-    if (key == "q") break;
+    if (key == 'q') break;
     else if (key == 's') imwrite("output.jpg", img_dst);
   }
   
