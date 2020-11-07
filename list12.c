@@ -1,11 +1,12 @@
 #include <stdio.h>
-#include <opencv2/oppencv.hpp>
+#include <opencv2/opencv.hpp>
 #include <opencv2/core/core.hpp>
+#include <opencv2/highgui/highgui_c.h>
 #include <opencv2/highgui/highgui.hpp> 
 
 using namespace cv;
 
-Mat img_src, img_bin, img_bun2, img_dst;
+Mat img_src, img_bin, img_bin2, img_dst;
 
 int main(int argc, char* argv[]) {
   char key;
@@ -25,7 +26,7 @@ int main(int argc, char* argv[]) {
     imshow("output", img_dst);
 
     key = waitKey(10);
-    if (key == "q") break;
+    if (key == 'q') break;
     else if (key == 's') imwrite("output.jpg", img_dst);
   }
   
